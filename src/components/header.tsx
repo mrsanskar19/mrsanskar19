@@ -4,9 +4,11 @@ import Link from 'next/link';
 import { Code2, Menu } from 'lucide-react';
 import { Button } from './ui/button';
 import { portfolioData } from '@/lib/data';
-import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from './ui/sheet';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
+  const pathname = usePathname();
   const navItems = [
     { name: 'Projects', href: '/#projects' },
     { name: 'Experience', href: '/#experience' },
@@ -29,7 +31,9 @@ export default function Header() {
             <Link
               key={item.name}
               href={item.href}
-              className="font-medium text-muted-foreground transition-colors hover:text-foreground/90"
+              className={`font-medium transition-colors hover:text-foreground/90 ${
+                pathname === item.href ? "text-foreground" : "text-muted-foreground"
+              }`}
             >
               {item.name}
             </Link>
@@ -47,12 +51,17 @@ export default function Header() {
                     </Button>
                 </SheetTrigger>
                 <SheetContent side="right">
-                    <nav className="grid gap-6 text-lg font-medium mt-16">
+                    <SheetHeader>
+                      <SheetTitle className="sr-only">Mobile Navigation Menu</SheetTitle>
+                    </SheetHeader>
+                    <nav className="grid gap-6 text-lg font-medium mt-8">
                     {navItems.map((item) => (
                         <Link
                             key={item.name}
                             href={item.href}
-                            className="text-muted-foreground transition-colors hover:text-foreground"
+                            className={`text-muted-foreground transition-colors hover:text-foreground ${
+                              pathname === item.href ? "text-foreground" : "text-muted-foreground"
+                            }`}
                         >
                             {item.name}
                         </Link>
