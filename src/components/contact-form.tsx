@@ -15,6 +15,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { useState } from "react";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -30,6 +31,7 @@ const formSchema = z.object({
 
 export default function ContactForm() {
   const { toast } = useToast();
+  const [loading,setLoading] = useState(false);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -39,13 +41,43 @@ export default function ContactForm() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    toast({
-      title: "Message Sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
-    });
-    form.reset();
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setLoading(true);
+    try {
+      const payload = {
+        email: "mr.sanskar19@gmail.com",
+        subject: "Portfolio Inquiry",
+        message: `<b>Name:</b> ${values.name}<br/><b>Email:</b> ${values.email}<br/><b>Message:</b> ${values.message}<br/>`,
+      };
+  
+      // 2. Send Request
+      const res = await fetch("https://api-cycberx.vercel.app/api/mail/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+      console.log(data);
+      if (!res.ok) { throw new Error(`Error: ${res.status}`); }
+      form.reset();
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for reaching out. I'll get back to you soon.",
+      });
+  
+    } catch (error: any) {
+      console.error("Submission error:", error);
+      toast({
+        variant: "destructive",
+        title: "Uh oh! Something went wrong.",
+        description: "There was a problem sending your message. Please try again.",
+      });
+  
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -95,7 +127,7 @@ export default function ContactForm() {
           )}
         />
         <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
-          Send Message
+          {loading ? "Sending...." : "Send Message"}
         </Button>
       </form>
     </Form>

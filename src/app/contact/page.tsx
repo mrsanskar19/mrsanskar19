@@ -6,7 +6,6 @@ import Footer from "@/components/footer";
 
 export default function ContactPage() {
   const { student } = portfolioData;
-
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
@@ -43,9 +42,9 @@ export default function ContactPage() {
                   <div className="flex items-start gap-4">
                     <MapPin className="h-6 w-6 text-primary mt-1" />
                     <span>
-                      State University,
+                      At Post Baramati,
                       <br />
-                      123 University Drive, Anytown, USA
+                      Dist Pune, Maharastra, India, 413102
                     </span>
                   </div>
                 </div>
@@ -58,7 +57,7 @@ export default function ContactPage() {
                         style={{ border: 0 }}
                         loading="lazy" 
                         allowFullScreen
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.618090546505!2d-73.987844084593!3d40.748440979328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1622559397523!5m2!1sen!2sus">
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60650.76050332415!2d74.54919168975216!3d18.178993108436917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc3a03bdb59287f%3A0x36e4fb47fb8d8a9d!2sBaramati%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1765384451414!5m2!1sen!2sin">
                     </iframe>
                 </div>
               </div>

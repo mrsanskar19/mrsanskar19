@@ -13,7 +13,7 @@ export default function Header() {
     { name: 'Projects', href: '/#projects' },
     { name: 'Experience', href: '/#experience' },
     { name: 'Resume', href: '/#resume' },
-    { name: 'Articles', href: '/#articles' },
+    // { name: 'Articles', href: '/#articles' },
     { name: 'Certificates', href: '/#certificates' },
     { name: 'Career', href: '/#career' },
     { name: 'Contact', href: '/contact' },
@@ -24,7 +24,7 @@ export default function Header() {
       <div className="container flex h-16 max-w-screen-2xl items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2 font-bold text-lg">
           <Code2 className="h-6 w-6 text-primary" />
-          <span>IT FolioFlow</span>
+          <span>mrsanskar</span>
         </Link>
         <nav className="hidden md:flex items-center gap-6 text-sm">
           {navItems.map((item) => (

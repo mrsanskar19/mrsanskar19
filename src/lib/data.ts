@@ -3,14 +3,14 @@ import { Github, Linkedin, Twitter, Briefcase, GraduationCap } from 'lucide-reac
 export const portfolioData = {
   student: {
     name: "Sanskar Bandgar",
-    email: "Mr.sanskar19@gmail.com",
+    email: "mr.sanskar19@gmail.com",
     phone: "+91 8767595276",
     title: "IT Engineering Student",
     bio: "Passionate about building scalable web applications and exploring the world of cloud computing. Currently seeking opportunities to apply my skills in a real-world environment.",
     socials: [
-      { name: "GitHub", url: "#", icon: Github },
-      { name: "LinkedIn", url: "#", icon: Linkedin },
-      { name: "Twitter", url: "#", icon: Twitter },
+      { name: "GitHub", url: "https://github.com/mrsanskar19/", icon: Github },
+      { name: "LinkedIn", url: "https://www.linkedin.com/in/sanskar-bandgar-719bb336a/", icon: Linkedin },
+      // { name: "Twitter", url: "#", icon: Twitter },
     ],
   },
   projects: [
@@ -45,26 +45,18 @@ export const portfolioData = {
   experience: [
     {
       id: "exp-1",
-      role: "Software Engineer Intern",
-      company: "Tech Solutions Inc.",
-      period: "Jun 2023 - Aug 2023",
+      role: "Freelancer",
+      company: "Client Base",
+      period: "Jun 2023 - Aug 2024",
       description: "Contributed to a client-facing web app using React and Node.js. Gained experience with Agile and CI/CD.",
       icon: Briefcase
     },
     {
       id: "exp-2",
-      role: "IT Support Specialist",
-      company: "University IT Services",
-      period: "Sep 2022 - May 2023",
-      description: "Provided technical assistance and troubleshooting for students and faculty, managing hardware and software issues.",
-      icon: Briefcase
-    },
-    {
-      id: "exp-3",
-      role: "B.Sc. in Information Technology",
-      company: "State University",
-      period: "Graduating May 2024",
-      description: "Focused on software development, database management, and network security. Maintained a 3.8 GPA.",
+      role: "BE in Information Technology",
+      company: "SPPU University",
+      period: "Graduating May 2024 - 2028",
+      description: "Focused on software development, database management, and network security. Maintained a 6.8 SGPA.",
       icon: GraduationCap
     },
   ],
