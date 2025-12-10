@@ -1,7 +1,8 @@
 import Link from 'next/link';
-import { Code2 } from 'lucide-react';
+import { Code2, Menu } from 'lucide-react';
 import { Button } from './ui/button';
 import { portfolioData } from '@/lib/data';
+import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
 
 export default function Header() {
   const navItems = [
@@ -9,6 +10,7 @@ export default function Header() {
     { name: 'Experience', href: '#experience' },
     { name: 'Certificates', href: '#certificates' },
     { name: 'Career', href: '#career' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -29,9 +31,32 @@ export default function Header() {
             </Link>
           ))}
         </nav>
-        <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-          <a href={`mailto:${portfolioData.student.email}`}>Contact Me</a>
-        </Button>
+        <div className="flex items-center gap-2">
+            <Button asChild className="hidden sm:inline-flex bg-accent text-accent-foreground hover:bg-accent/90">
+                <a href={`mailto:${portfolioData.student.email}`}>Contact Me</a>
+            </Button>
+            <Sheet>
+                <SheetTrigger asChild>
+                    <Button variant="outline" size="icon" className="md:hidden">
+                        <Menu className="h-5 w-5" />
+                        <span className="sr-only">Toggle Menu</span>
+                    </Button>
+                </SheetTrigger>
+                <SheetContent side="right">
+                    <nav className="grid gap-6 text-lg font-medium mt-16">
+                    {navItems.map((item) => (
+                        <Link
+                            key={item.name}
+                            href={item.href}
+                            className="text-muted-foreground transition-colors hover:text-foreground"
+                        >
+                            {item.name}
+                        </Link>
+                    ))}
+                    </nav>
+                </SheetContent>
+            </Sheet>
+        </div>
       </div>
     </header>
   );
