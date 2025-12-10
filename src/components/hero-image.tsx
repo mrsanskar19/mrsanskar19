@@ -1,40 +1,43 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export default function HeroImage() {
-  const [scrollY, setScrollY] = useState(0);
-  const studentImage = PlaceHolderImages.find(p => p.id === 'student-profile');
+  const studentImages = PlaceHolderImages.filter(p => p.id.startsWith('student-profile'));
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  if (!studentImage) {
+  if (!studentImages.length) {
     return null;
   }
 
   return (
-    <div className="relative w-48 h-48 md:w-60 md:h-60 rounded-full overflow-hidden shadow-2xl border-4 border-background/20 group">
-      <Image
-        src={studentImage.imageUrl}
-        alt="Student profile photo"
-        fill
-        className="object-cover transition-transform duration-300 ease-out group-hover:scale-105"
-        style={{ transform: `translateY(${scrollY * 0.1}px)` }}
-        data-ai-hint={studentImage.imageHint}
-        priority
-        sizes="(max-width: 768px) 192px, 240px"
-      />
-    </div>
+    <Carousel className="w-full max-w-md" opts={{ loop: true }}>
+      <CarouselContent>
+        {studentImages.map((image, index) => (
+          <CarouselItem key={index}>
+            <div className="aspect-square relative rounded-lg overflow-hidden shadow-2xl border-4 border-background/20">
+              <Image
+                src={image.imageUrl}
+                alt={image.description}
+                fill
+                className="object-cover"
+                data-ai-hint={image.imageHint}
+                priority={index === 0}
+                sizes="(max-width: 768px) 100vw, 480px"
+              />
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious className="left-2" />
+      <CarouselNext className="right-2" />
+    </Carousel>
   );
 }
