@@ -5,11 +5,8 @@ import { Code2, Menu } from 'lucide-react';
 import { Button } from './ui/button';
 import { portfolioData } from '@/lib/data';
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
-import { usePathname } from 'next/navigation';
 
 export default function Header() {
-  const pathname = usePathname();
-
   const navItems = [
     { name: 'Projects', href: '/#projects' },
     { name: 'Experience', href: '/#experience' },
