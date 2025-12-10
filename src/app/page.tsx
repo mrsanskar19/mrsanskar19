@@ -7,6 +7,7 @@ import Career from '@/components/career';
 import Cta from '@/components/cta';
 import Footer from '@/components/footer';
 import Resume from '@/components/resume';
+import Articles from '@/components/articles';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
           <Projects />
           <Experience />
           <Resume />
+          <Articles />
           <Certificates />
           <Career />
         </div>

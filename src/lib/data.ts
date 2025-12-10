@@ -2,8 +2,9 @@ import { Github, Linkedin, Twitter, Briefcase, GraduationCap } from 'lucide-reac
 
 export const portfolioData = {
   student: {
-    name: "Alex Doe",
-    email: "alex.doe@example.com",
+    name: "Sanskar Bandgar",
+    email: "Mr.sanskar19@gmail.com",
+    phone: "+91 8767595276",
     title: "IT Engineering Student",
     bio: "Passionate about building scalable web applications and exploring the world of cloud computing. Currently seeking opportunities to apply my skills in a real-world environment.",
     socials: [
@@ -95,6 +96,35 @@ export const portfolioData = {
       issuer: "Hack The Future 2022",
       date: "Oct 2022",
       imageUrl: "certificate-4",
+    },
+  ],
+  articles: [
+    {
+      id: "article-1",
+      title: "The Rise of Serverless Computing",
+      description: "An in-depth look at serverless architectures, their benefits, and how they are changing the landscape of cloud computing.",
+      imageUrl: "article-1",
+      tags: ["Cloud", "Serverless", "Architecture"],
+      readUrl: "#",
+      date: "Oct 15, 2023",
+    },
+    {
+      id: "article-2",
+      title: "A Guide to Modern Authentication",
+      description: "Exploring different authentication methods like OAuth 2.0, OpenID Connect, and JWTs in modern web applications.",
+      imageUrl: "article-2",
+      tags: ["Security", "Authentication", "WebDev"],
+      readUrl: "#",
+      date: "Sep 28, 2023",
+    },
+    {
+      id: "article-3",
+      title: "Mastering State Management in React",
+      description: "A comparative analysis of state management libraries in React, including Redux, Zustand, and Context API.",
+      imageUrl: "article-3",
+      tags: ["React", "State Management", "Frontend"],
+      readUrl: "#",
+      date: "Aug 12, 2023",
     },
   ],
   careerInterests: {

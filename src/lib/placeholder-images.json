@@ -65,6 +65,24 @@
       "description": "A certificate of achievement for a hackathon.",
       "imageUrl": "https://images.unsplash.com/photo-1637763723578-79a4ca9225f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjZXJ0aWZpY2F0ZSUyMGRvY3VtZW50fGVufDB8fHx8MTc2NTI3MzgyNnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "certificate document"
+    },
+    {
+      "id": "article-1",
+      "description": "Abstract image representing cloud computing.",
+      "imageUrl": "https://images.unsplash.com/photo-1605634591414-04b3d7501a35?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "cloud abstract"
+    },
+    {
+      "id": "article-2",
+      "description": "Image of a lock, representing security and authentication.",
+      "imageUrl": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "security lock"
+    },
+    {
+      "id": "article-3",
+      "description": "React logo on a screen.",
+      "imageUrl": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "react logo"
     }
   ]
 }

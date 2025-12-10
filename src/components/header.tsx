@@ -1,16 +1,22 @@
+"use client";
+
 import Link from 'next/link';
 import { Code2, Menu } from 'lucide-react';
 import { Button } from './ui/button';
 import { portfolioData } from '@/lib/data';
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
+  const pathname = usePathname();
+
   const navItems = [
-    { name: 'Projects', href: '#projects' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Resume', href: '#resume' },
-    { name: 'Certificates', href: '#certificates' },
-    { name: 'Career', href: '#career' },
+    { name: 'Projects', href: '/#projects' },
+    { name: 'Experience', href: '/#experience' },
+    { name: 'Resume', href: '/#resume' },
+    { name: 'Articles', href: '/#articles' },
+    { name: 'Certificates', href: '/#certificates' },
+    { name: 'Career', href: '/#career' },
     { name: 'Contact', href: '/contact' },
   ];
 
