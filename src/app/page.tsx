@@ -6,6 +6,7 @@ import Certificates from '@/components/certificates';
 import Career from '@/components/career';
 import Cta from '@/components/cta';
 import Footer from '@/components/footer';
+import Resume from '@/components/resume';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6 space-y-16 md:space-y-24">
           <Projects />
           <Experience />
+          <Resume />
           <Certificates />
           <Career />
         </div>

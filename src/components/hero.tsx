@@ -1,15 +1,29 @@
+import Image from "next/image";
 import { portfolioData } from "@/lib/data";
 import { Button } from "./ui/button";
 import HeroImage from "./hero-image";
 import Link from "next/link";
-import { Download, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export default function Hero() {
   const { student } = portfolioData;
+  const heroBgImage = PlaceHolderImages.find(p => p.id === 'hero-background');
 
   return (
-    <section id="home" className="py-20 md:py-32 bg-secondary/30 dark:bg-card">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="home" className="relative py-20 md:py-32">
+      {heroBgImage && (
+        <Image
+          src={heroBgImage.imageUrl}
+          alt={heroBgImage.description}
+          fill
+          className="object-cover object-center"
+          priority
+          data-ai-hint={heroBgImage.imageHint}
+        />
+      )}
+      <div className="absolute inset-0 bg-background/70 backdrop-blur-sm"></div>
+      <div className="container mx-auto px-4 md:px-6 relative">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="flex justify-center md:order-2">
             <HeroImage />
@@ -29,11 +43,6 @@ export default function Hero() {
                 <Link href="/contact">
                   Contact Me <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
-              </Button>
-              <Button variant="outline" size="lg" asChild>
-                <a href="/resume.pdf" download>
-                  Download CV <Download className="ml-2 h-5 w-5" />
-                </a>
               </Button>
             </div>
              <div className="mt-8 flex justify-center md:justify-start gap-4">
