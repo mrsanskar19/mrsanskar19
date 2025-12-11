@@ -1,0 +1,17 @@
+{
+  "$schema": "https://openapi.vercel.sh/microfrontends.json",
+  "applications": {
+    "mrsanskar": {
+      "development": {
+        "fallback": "mrsanskar.vercel.app"
+      }
+    },
+    "api-cycberx": {
+      "routing": [
+        {
+          "paths":"/api" 
+        }
+      ]
+    }
+  }
+}
