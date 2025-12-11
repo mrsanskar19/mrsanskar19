@@ -9,7 +9,7 @@
     "api-cycberx": {
       "routing": [
         {
-          "paths":"/api" 
+          "paths":["/api"]
         }
       ]
     }
