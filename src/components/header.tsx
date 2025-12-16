@@ -14,7 +14,7 @@ export default function Header() {
     { name: 'Experience', href: '/#experience' },
     { name: 'Resume', href: '/#resume' },
     // { name: 'Articles', href: '/#articles' },
-    { name: 'Certificates', href: '/#certificates' },
+    // { name: 'Certificates', href: '/#certificates' },
     { name: 'Career', href: '/#career' },
     { name: 'Contact', href: '/contact' },
   ];

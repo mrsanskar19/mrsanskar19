@@ -20,7 +20,7 @@ export default function Home() {
           <Experience />
           <Resume />
           {/* <Articles /> */}
-          <Certificates />
+          {/* <Certificates /> */}
           <Career />
         </div>
         <Cta />

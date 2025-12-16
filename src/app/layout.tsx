@@ -3,7 +3,7 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'IT FolioFlow - Personal Portfolio',
+  title: 'mrsanskar - Personal Portfolio',
   description: 'A personal portfolio for an IT engineering student, showcasing projects, experience, and skills.',
 };
 

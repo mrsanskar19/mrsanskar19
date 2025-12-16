@@ -50,10 +50,12 @@ export default function Projects() {
               </CardContent>
               <CardFooter className="flex justify-end gap-2">
                 <Button variant="outline" size="sm" asChild>
-                  <a href={project.repoUrl} target="_blank" rel="noopener noreferrer">
+                  {project.repoUrl ? (
+                    <a href={project.repoUrl} target="_blank" rel="noopener noreferrer">
                     <Github />
                     <span>Source</span>
                   </a>
+                  ) : ""}
                 </Button>
                 <Button variant="default" size="sm" asChild>
                   <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">

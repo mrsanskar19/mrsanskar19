@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <Link href="/" className="flex items-center gap-2 font-bold">
             <Code2 className="h-6 w-6 text-primary" />
-            <span className="text-lg">IT FolioFlow</span>
+            <span className="text-lg">{student.name}</span>
           </Link>
 
           <div className="flex gap-4">
